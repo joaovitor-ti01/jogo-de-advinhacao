@@ -9,7 +9,7 @@ const attemptsLeft = document.getElementById('attemptsLeft');
 const submitGuess = document.getElementById('submitGuess');
 const restartGame = document.getElementById('restartGamer');
 
-attemptsLeft.textContent = 'Tentativas restantes:${tentativas}';
+attemptsLeft.textContent = `Tentativas restantes:${tentativas}`;
 
 // Função para verificar o palpite 
 function verificarPalpite() {
@@ -20,7 +20,7 @@ function verificarPalpite() {
     }
 
     tentativas--;
-    attemptsLeft.textContent = 'Tentativas restantes:${tentativas}';
+    attemptsLeft.textContent = `Tentativas restantes:${tentativas}`;
 
     if (palpite === numeroAleatorio) {
         message.textContent = 'Parabéns! Você acertou';
@@ -32,7 +32,7 @@ function verificarPalpite() {
     }
 
     if ( tentativas === 0) {
-        message.textContent = 'Fim de jogo! O número era ${numeroAleatorio}.';
+        message.textContent = `Fim de jogo! O número era ${numeroAleatorio}.`;
         fimDoJogo();
     }
 }
@@ -47,13 +47,13 @@ function fimDoJogo() {
 // Reniciar o jogo 
 function reniciarJogo() {
     numeroAleatorio = Math.floor(Math.random() *100) +1;
-    tentativa = 10;
+    tentativas = 10;
     input.disabled = false;
     submitGuess.disabled = false;
     restartGame.style.display = "none";
     message.textContent = '';
     input.value = '';
-    attemptsLeft.textContent = 'Tentativas restantes: ${tentativas}';
+    attemptsLeft.textContent = `Tentativas restantes: ${tentativas} `;
 }
 
 //Eventos 
